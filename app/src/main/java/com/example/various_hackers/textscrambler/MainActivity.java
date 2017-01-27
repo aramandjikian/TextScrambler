@@ -1,6 +1,5 @@
 package com.example.various_hackers.textscrambler;
 
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
-
+    String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+    String CIPHER_ALPHABET = "zebrascdfghijklmnopqtuvwxy";
     EditText input_text;
     Button translate_b;
     ImageButton reverse_b;
@@ -37,14 +37,35 @@ public class MainActivity extends AppCompatActivity {
     public void swap_direction() {
 
     }
+
     //Use these functions to implement a substitution cipher (https://en.wikipedia.org/wiki/Substitution_cipher)
     //Optional Substitutional Cipher, but you can use your own.
     //  plain text: ABCDEFGHIJKLMNOPQRSTUVWXYZ
     // cipher text: ZEBRASCDFGHIJKLMNOPQTUVWXY
     // example: "flee at once. we are discovered!" transforms into "SIAA ZQ LKBA. VA ZOA RFPBLUAOAR!"
-    public void encrypt1() {
+    public String encrypt1(String plainText) {
+        char[] decrypted_list = new char[plainText.length()];
+        for(int i = 0; i < plainText.length(); i++)
+        {
+            char plain_char = plainText.charAt(i);
 
+            boolean uppercase_flag = false;
+            if ( Character.isUpperCase(plain_char) )
+            {
+                uppercase_flag = true;
+            }
+            int index = this.ALPHABET.indexOf(Character.toLowerCase(plain_char));
+            char encrypt_char = this.CIPHER_ALPHABET.charAt(index);
+
+            if ( uppercase_flag )
+            {
+                encrypt_char = Character.toUpperCase(encrypt_char);
+            }
+            decrypted_list[i] = encrypt_char;
+        }
+        return new String(decrypted_list);
     }
+
     public void decrypt1() {
 
     }
