@@ -1,15 +1,15 @@
 package com.example.various_hackers.textscrambler;
 
-import android.provider.Settings;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
-
+    String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+    String CIPHER_ALPHABET = "zebrascdfghijklmnopqtuvwxy";
     EditText input_text;
     Button translate_b;
     ImageButton reverse_b;
@@ -45,8 +45,26 @@ public class MainActivity extends AppCompatActivity {
     public void encrypt1() {
 
     }
-    public void decrypt1() {
+    public String decrypt1(String encryptedText) {
 
+        char[] decrypted_list = new char[encryptedText.length()];
+        for(int i = 0; i < encryptedText.length(); i++) {
+            char encrypted_char = encryptedText.charAt(i);
+
+            boolean uppercase_flag = false;
+            if ( Character.isUpperCase(encrypted_char) ) {
+                uppercase_flag = true;
+            }
+            int index = this.CIPHER_ALPHABET.indexOf(Character.toLowerCase(encrypted_char));
+            char decrypt_char = this.ALPHABET.charAt(index);
+
+            if ( uppercase_flag ) {
+                decrypt_char = Character.toUpperCase(decrypt_char);
+            }
+            decrypted_list[i] = decrypt_char;
+        }
+        String final_text = new String(decrypted_list);
+        return final_text;
     }
 
     //Use these functions to implement a polyalphabetic cipher (https://en.wikipedia.org/wiki/Polyalphabetic_cipher)
