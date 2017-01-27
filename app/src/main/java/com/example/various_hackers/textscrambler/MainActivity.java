@@ -1,10 +1,10 @@
 package com.example.various_hackers.textscrambler;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -66,8 +66,24 @@ public class MainActivity extends AppCompatActivity {
         return new String(decrypted_list);
     }
 
-    public void decrypt1() {
+    public String decrypt1(String encryptedText) {
+        char[] decrypted_list = new char[encryptedText.length()];
+        for(int i = 0; i < encryptedText.length(); i++) {
+            char encrypted_char = encryptedText.charAt(i);
 
+            boolean uppercase_flag = false;
+            if ( Character.isUpperCase(encrypted_char) ) {
+                uppercase_flag = true;
+            }
+            int index = this.CIPHER_ALPHABET.indexOf(Character.toLowerCase(encrypted_char));
+            char decrypt_char = this.ALPHABET.charAt(index);
+
+            if ( uppercase_flag ) {
+                decrypt_char = Character.toUpperCase(decrypt_char);
+            }
+            decrypted_list[i] = decrypt_char;
+        }
+        return new String(decrypted_list);
     }
 
     //Use these functions to implement a polyalphabetic cipher (https://en.wikipedia.org/wiki/Polyalphabetic_cipher)
