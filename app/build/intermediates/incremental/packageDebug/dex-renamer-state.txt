@@ -1,0 +1,7 @@
+#Thu Jan 26 14:21:31 PST 2017
+base.0=/Users/kirillshumilov/AndroidStudioProjects/TextScrambler/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_700ff6c168e0029b8ee11535adb0c9f2f38799e0
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/kirillshumilov/AndroidStudioProjects/TextScrambler/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a2bcd3be32d3fc004e089f8d4310719930fa3b7d/classes.dex
+base.1=/Users/kirillshumilov/AndroidStudioProjects/TextScrambler/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a2bcd3be32d3fc004e089f8d4310719930fa3b7d
+file.0=/Users/kirillshumilov/AndroidStudioProjects/TextScrambler/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_700ff6c168e0029b8ee11535adb0c9f2f38799e0/classes.dex

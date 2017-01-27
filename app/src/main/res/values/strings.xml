@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TextScrambler</string>
+    <string name="app_title">T3XT SCR4MBL3R</string>
+    <string name="substitution_string">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+</resources>
