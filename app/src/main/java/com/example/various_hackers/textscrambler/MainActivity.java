@@ -1,5 +1,6 @@
 package com.example.various_hackers.textscrambler;
 
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         reverse_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // Made some changes
             }
         });
     }
